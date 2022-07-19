@@ -39,6 +39,7 @@ public class BonusServiceTest {
     }
 
     // проверка сервисного класса по технике попарного тестирования
+    // запускайте с мавена, тесты не проходят с IntelliJ
     @org.junit.jupiter.api.Test
     void MoneyTrueMatchUplimit() {
         BonusService service = new BonusService();
