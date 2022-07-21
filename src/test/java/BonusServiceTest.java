@@ -39,6 +39,8 @@ public class BonusServiceTest {
     }
 
     // проверка сервисного класса по технике попарного тестирования
+    // Если тесты с параметром "Nomatch" (несовпадающие параметры) выдают ошибку НЕ СТОИТ ПУГАТЬСЯ!
+    // работает как и задумано
     @org.junit.jupiter.api.Test
     void MoneyTrueMatchUplimit() {
         BonusService service = new BonusService();
