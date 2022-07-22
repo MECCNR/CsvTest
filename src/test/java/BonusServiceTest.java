@@ -38,9 +38,7 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    // проверка сервисного класса по технике попарного тестирования
-    // Если тесты с параметром "Nomatch" (несовпадающие параметры) выдают ошибку НЕ СТОИТ ПУГАТЬСЯ!
-    // работает как и задумано
+    // проверка сервисного класса по технике попарного тестирования (только положительные тесты)
     @org.junit.jupiter.api.Test
     void MoneyTrueMatchUplimit() {
         BonusService service = new BonusService();
@@ -59,28 +57,6 @@ public class BonusServiceTest {
         long amount = 1000;
         boolean registered = true;
         long expected = 30;
-        long actual = service.calculate(amount, registered);
-        assertEquals(expected, actual);
-    }
-
-    @org.junit.jupiter.api.Test
-    void MoneyTrueNomatchUpimit() {
-        BonusService service = new BonusService();
-
-        long amount = 1000000;
-        boolean registered = true;
-        long expected = 32;
-        long actual = service.calculate(amount, registered);
-        assertEquals(expected, actual);
-    }
-
-    @org.junit.jupiter.api.Test
-    void MoneyTrueNomatchLimit() {
-        BonusService service = new BonusService();
-
-        long amount = 1000;
-        boolean registered = true;
-        long expected = 32;
         long actual = service.calculate(amount, registered);
         assertEquals(expected, actual);
     }
@@ -108,45 +84,12 @@ public class BonusServiceTest {
     }
 
     @org.junit.jupiter.api.Test
-    void MoneyFalseNomatchUplimit() {
-        BonusService service = new BonusService();
-
-        long amount = 1000000;
-        boolean registered = false;
-        long expected = 32;
-        long actual = service.calculate(amount, registered);
-        assertEquals(expected, actual);
-    }
-
-    @org.junit.jupiter.api.Test
-    void MoneyFalseNomatchLimit() {
-        BonusService service = new BonusService();
-
-        long amount = 1000;
-        boolean registered = false;
-        long expected = 32;
-        long actual = service.calculate(amount, registered);
-        assertEquals(expected, actual);
-    }
-
-    @org.junit.jupiter.api.Test
     void NomoneyTrueMatchLimit() {
         BonusService service = new BonusService();
 
         long amount = 0;
         boolean registered = true;
         long expected = 0;
-        long actual = service.calculate(amount, registered);
-        assertEquals(expected, actual);
-    }
-
-    @org.junit.jupiter.api.Test
-    void NomoneyTrueNomatchLimit() {
-        BonusService service = new BonusService();
-
-        long amount = 0;
-        boolean registered = true;
-        long expected = 2;
         long actual = service.calculate(amount, registered);
         assertEquals(expected, actual);
     }
@@ -162,14 +105,4 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
-    void NomoneyFalseNomatchLimit() {
-        BonusService service = new BonusService();
-
-        long amount = 0;
-        boolean registered = false;
-        long expected = 2;
-        long actual = service.calculate(amount, registered);
-        assertEquals(expected, actual);
-    }
 }
