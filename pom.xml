@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.netology</groupId>
-    <artifactId>MavProject</artifactId>
+    <artifactId>NewProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
